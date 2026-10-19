@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio Builder</title>
+
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bar">
+  <strong>Portfolio Builder</strong>
+  <button class="ghost" id="resetBtn" type="button">Reset</button>
+  <button class="primary" id="dlBtn" type="button">Download</button>
+</div>
+<div class="tabs" role="tablist">
+  <button type="button" role="tab" id="tabEdit" aria-selected="true">Edit</button>
+  <button type="button" role="tab" id="tabView" aria-selected="false">Preview</button>
+</div>
+
+<div class="layout">
+  <div id="editor">
+    <fieldset>
+      <legend>About you</legend>
+      <label for="name">Full name</label>
+      <input type="text" id="name" data-k="name" autocomplete="name">
+      <label for="role">What you do</label>
+      <input type="text" id="role" data-k="role" placeholder="e.g. Computer Science student">
+      <label for="about">Short bio</label>
+      <textarea id="about" data-k="about"></textarea>
+      <label for="skills">Skills</label>
+      <input type="text" id="skills" data-k="skills" placeholder="HTML, CSS, JavaScript">
+      <p class="hint">Separate skills with commas.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Contact</legend>
+      <label for="email">Email</label>
+      <input type="email" id="email" data-k="email" autocomplete="email">
+      <label for="github">GitHub username</label>
+      <input type="text" id="github" data-k="github" autocapitalize="none">
+      <label for="linkedin">LinkedIn link (optional)</label>
+      <input type="text" id="linkedin" data-k="linkedin" autocapitalize="none">
+    </fieldset>
+
+    <fieldset>
+      <legend>Look</legend>
+      <label for="accent">Main color</label>
+      <input type="color" id="accent" data-k="accent">
+    </fieldset>
+
+    <fieldset>
+      <legend>Projects</legend>
+      <div id="projects"></div>
+      <button class="add" id="addProj" type="button">Add a project</button>
+    </fieldset>
+  </div>
+
+  <div id="preview" aria-live="polite"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
